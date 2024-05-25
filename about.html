@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>О нас</title>
+</head>
+<body>
+    <h1>Страница "О нас"</h1>
+    <p>Количество просмотров: <span id="aboutPageViews">0</span></p>
+    <a href="/">Вернуться на главную страницу</a>
+
+    <script>
+        fetch('/pageViews')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('aboutPageViews').innerText = data.aboutPageViews;
+            });
+    </script>
+</body>
+</html>
